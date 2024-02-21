@@ -6,6 +6,14 @@ require dirname(__DIR__).'/vendor/autoload.php';
 
 if ($_GET['logout'] ?? false) {
     // implement this.
+    header(
+        Cookie::generate(
+            'yakdam',
+            '',
+            -1
+        ),
+        false,
+    );
 
     header('Location: /');
     exit();
